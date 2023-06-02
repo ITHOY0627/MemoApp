@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoApp.Views.MemoItemPage"
+             Title="{Binding Name}"
+             BackgroundColor="#f5fafc">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="저장" Clicked="OnSaveClicked">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    
+    <!-- 여기 메모장 부터 디자인 해야하는데....  -->
+    <Grid Margin="0,5,5,5" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Entry Grid.Row="0" Grid.Column="0" Placeholder="제목입력" Text="{Binding Name}"  />
+
+        <Editor Grid.Row="1" Grid.Column="0" Keyboard="Plain" AutoSize="TextChanges" Text="{Binding Notes}" />
+    </Grid>
+
+
+    <!--<StackLayout Margin="20" 
+                 VerticalOptions="StartAndExpand">
+        <Label Text="Name" />
+        <Entry Text="{Binding Name}" />
+        <Label Text="Notes" />
+        <Entry Text="{Binding Notes}" />
+        <Label Text="Done" />
+        <Switch IsToggled="{Binding Done}" />
+        
+        <Button Text="Save"
+                Clicked="OnSaveClicked" />
+        <Button Text="Delete"
+                Clicked="OnDeleteClicked" />
+        <Button Text="Cancel"
+                Clicked="OnCancelClicked" />
+    </StackLayout>-->
+
+</ContentPage>
