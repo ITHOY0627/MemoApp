@@ -7,9 +7,12 @@ namespace MemoApp.Models
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Title { get; set; }
         public string Notes { get; set; }
-        public DateTime? InsysDate { get; set; }
+
+        [Indexed(Name = "idx_regdate", Order = 1, Unique = false)]
+        public string RegDate { get; set; }
+        public DateTime? RegDateTime { get; set; }
         
         //public bool Done { get; set; }
     }

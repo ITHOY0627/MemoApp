@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace MemoApp
+namespace MemoApp.Data
 {
     public static class Constants
     {

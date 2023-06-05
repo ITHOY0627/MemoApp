@@ -2,7 +2,7 @@
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace MemoApp
+namespace MemoApp.Data
 {
     public class AsyncLazy<T>
     {

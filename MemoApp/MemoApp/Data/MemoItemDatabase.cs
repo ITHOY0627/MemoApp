@@ -1,5 +1,4 @@
-﻿using MemoApp;
-using MemoApp.Models;
+﻿using MemoApp.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -30,7 +29,7 @@ namespace MemoApp.Data
 
         public Task<List<MemoItem>> GetItemsNotDoneAsync()
         {
-            return Database.QueryAsync<MemoItem>("SELECT * FROM [MemoItem] WHERE [Done] = 0");
+            return Database.QueryAsync<MemoItem>("SELECT * FROM [MemoItem]");
         }
 
         public Task<MemoItem> GetItemAsync(int id)
