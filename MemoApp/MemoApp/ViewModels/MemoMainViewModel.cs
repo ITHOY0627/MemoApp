@@ -1,6 +1,8 @@
 ﻿using MemoApp.Data;
 using MemoApp.Interfaces;
 using MemoApp.Models;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -40,6 +42,8 @@ namespace MemoApp.ViewModels
             IsBusy = true;
             (ExportDBCommand as Command).ChangeCanExecute();
 
+            Analytics.TrackEvent("ExportDB");
+
             MemoItemDatabase database = await MemoItemDatabase.Instance;
             var path = await database.DBToExport();
 
@@ -72,6 +76,8 @@ namespace MemoApp.ViewModels
                     {
                         //Debug.WriteLine("ERROR: " + ex.Message);
                         await Application.Current.MainPage.DisplayAlert("Err", ex.Message, "OK");
+
+                        Crashes.TrackError(ex);
                     }
                 }
             }
