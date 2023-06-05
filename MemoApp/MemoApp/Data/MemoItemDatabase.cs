@@ -1,9 +1,14 @@
-﻿using MemoApp.Models;
+﻿using MemoApp.Helpers;
+using MemoApp.Interfaces;
+using MemoApp.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace MemoApp.Data
 {
@@ -54,6 +59,23 @@ namespace MemoApp.Data
             return Database.DeleteAsync(item);
         }
 
+
+        public async Task<string> DBToExport()
+        {
+            var result = await PermissionMethods.AskForRequiredStoragePermission();
+            if (!result)
+            {
+                IPermissionSettingsService service = DependencyService.Get<IPermissionSettingsService>();
+                service.OpenAppSettings();
+
+                return string.Empty;
+            }
+
+            var backupPath = Path.Combine(FileSystem.CacheDirectory, Constants.DatabaseFilename);
+            await Database.BackupAsync(backupPath);
+
+            return backupPath;
+        }
 
 
 

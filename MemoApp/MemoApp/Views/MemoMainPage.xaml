@@ -8,7 +8,7 @@
     <ContentPage.BindingContext>
         <vm:MemoMainViewModel x:Name="vm"/>
     </ContentPage.BindingContext>
-    
+
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="+" Clicked="ToolbarItem_Clicked">
             <ToolbarItem.IconImageSource>
@@ -18,7 +18,12 @@
             </ToolbarItem.IconImageSource>
         </ToolbarItem>
 
+        <ToolbarItem Order="Primary" 
+					 Priority="0" 
+					 Text="ExportDB"
+					 Command="{Binding ExportDBCommand}"/>
     </ContentPage.ToolbarItems>
+
 
 
     <CollectionView ItemsSource="{Binding Items}">
