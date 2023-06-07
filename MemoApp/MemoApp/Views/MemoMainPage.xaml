@@ -27,39 +27,38 @@
 
 
     <CollectionView ItemsSource="{Binding Items}">
+
         <CollectionView.ItemsLayout>
             <LinearItemsLayout Orientation="Horizontal" />
         </CollectionView.ItemsLayout>
-        
+
         <CollectionView.ItemTemplate>
-        <DataTemplate>
-            <Grid Padding="10">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="35" />
-                    <RowDefinition Height="35" />
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="70" />
-                    <ColumnDefinition Width="140" />
-                </Grid.ColumnDefinitions>
-                
-                <Label Grid.Row="0"
-                       Grid.Column="1"
-                       Text="{Binding Title}"
-                       FontAttributes="Bold"
-                       LineBreakMode="TailTruncation" />
-                <Label Grid.Row="1"
-                       Grid.Column="1"
-                       Text="{Binding Notes}"
-                       LineBreakMode="TailTruncation"
-                       FontAttributes="Italic"
-                       VerticalOptions="End" />
-            </Grid>
-        </DataTemplate>
-    </CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Grid Padding="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35" />
+                        <RowDefinition Height="35" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="140" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="{Binding Title}"
+                           FontAttributes="Bold"
+                           LineBreakMode="TailTruncation" />
+                    <Label Grid.Row="1"
+                           Grid.Column="1"
+                           Text="{Binding Notes}"
+                           LineBreakMode="TailTruncation"
+                           FontAttributes="Italic"
+                           VerticalOptions="End" />
+                </Grid>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
     </CollectionView>
-
-
 
 
 </ContentPage>

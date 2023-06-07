@@ -6,8 +6,6 @@ namespace MemoApp.ViewModels
 {
     public class MemoItemViewModel : ViewModelBase
     {
-
-
         public MemoItemViewModel()
         {
 

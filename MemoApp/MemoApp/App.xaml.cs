@@ -28,7 +28,7 @@ namespace MemoApp
 
         protected override void OnStart()
         {
-            AppCenter.Start("android=08b0a7d1-9217-415d-9e37-9d3152e358cf;" +
+            AppCenter.Start("android=8f0b9039-9b08-491f-895f-610a1693c0f1;" +
                     "uwp={Your UWP App secret here};" +
                     "ios={}",
                     typeof(Analytics), typeof(Crashes));
@@ -36,10 +36,12 @@ namespace MemoApp
 
         protected override void OnSleep()
         {
+
         }
 
         protected override void OnResume()
         {
+
         }
     }
 }

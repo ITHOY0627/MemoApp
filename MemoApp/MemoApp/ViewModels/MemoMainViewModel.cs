@@ -34,6 +34,14 @@ namespace MemoApp.ViewModels
             ExportDBCommand = new Command(() => ExportDB(), () => IsControlEnable);
         }
 
+        public async void OnAppearing() // 화면 나올때마다 불러옴.(view에서 불러옴.)
+        {
+            MemoItemDatabase database = await MemoItemDatabase.Instance;
+            var result = await database.GetItemsAsync();
+
+            Items.Clear();
+            Items.AddRange(result);
+        }
 
         private async void ExportDB()
         {
