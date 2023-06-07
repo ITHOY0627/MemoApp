@@ -26,36 +26,41 @@
 
 
 
-    <CollectionView ItemsSource="{Binding Items}">
+    <CollectionView ItemsSource="{Binding Items}" ItemsLayout="VerticalGrid, 2">
 
-        <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Vertical" />
-        </CollectionView.ItemsLayout>
-
+        <!--요 아래서 부터 디자인-->
         <CollectionView.ItemTemplate>
             <DataTemplate>
-                <Grid Padding="10">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="35" />
-                        <RowDefinition Height="35" />
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="70" />
-                        <ColumnDefinition Width="140" />
-                    </Grid.ColumnDefinitions>
-
-                    <Label Grid.Row="0"
+                <Frame BorderColor="#ededed"
+                       CornerRadius="10"
+                       IsClippedToBounds="True"
+                       HasShadow="True"
+                       BackgroundColor="#ffff00"
+                       Padding="0" Margin="0">
+                    
+                    <Grid BackgroundColor="#ff00ff"
+                          RowSpacing="0" ColumnSpacing="0" Padding="0,0,0,0" Margin="0,0,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="140" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" BackgroundColor="#00ff00"
                            Grid.Column="1"
                            Text="{Binding Title}"
                            FontAttributes="Bold"
                            LineBreakMode="TailTruncation" />
-                    <Label Grid.Row="1"
+                        <Label Grid.Row="1" BackgroundColor="#0000ff"
                            Grid.Column="1"
                            Text="{Binding Notes}"
                            LineBreakMode="TailTruncation"
                            FontAttributes="Italic"
                            VerticalOptions="End" />
-                </Grid>
+                    </Grid>
+                </Frame>
             </DataTemplate>
         </CollectionView.ItemTemplate>
     </CollectionView>
