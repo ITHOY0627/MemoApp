@@ -12,6 +12,14 @@ namespace MemoApp.Views
             InitializeComponent();
         }
 
+        //protected override async void OnAppearing()
+        //{
+        //    base.OnAppearing();
+
+        //    MemoItemDatabase database = await MemoItemDatabase.Instance;
+        //    listView.ItemsSource = await database.GetItemsAsync();
+        //}
+
         async void OnSaveClicked(object sender, EventArgs e)
         {
             var MemoItem = (MemoItem)BindingContext;

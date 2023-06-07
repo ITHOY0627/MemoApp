@@ -29,7 +29,7 @@
     <CollectionView ItemsSource="{Binding Items}">
 
         <CollectionView.ItemsLayout>
-            <LinearItemsLayout Orientation="Horizontal" />
+            <LinearItemsLayout Orientation="Vertical" />
         </CollectionView.ItemsLayout>
 
         <CollectionView.ItemTemplate>
