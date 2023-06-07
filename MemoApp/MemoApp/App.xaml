@@ -5,6 +5,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <Color x:Key="TitleColor">#BBD0FF</Color>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
