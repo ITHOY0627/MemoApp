@@ -34,7 +34,11 @@ namespace MemoApp.Views
 
         private void OnDeleteClicked(object sender, EventArgs e)
         {
+            //var MemoItem = (MemoItem)BindingContext;
+            //MemoItemDatabase database = await MemoItemDatabase.Instance;
+            //await database.DeleteItemAsync(MemoItem);
 
+            //await Navigation.PopAsync();
         }
 
         private void OnCancelClicked(object sender, EventArgs e)

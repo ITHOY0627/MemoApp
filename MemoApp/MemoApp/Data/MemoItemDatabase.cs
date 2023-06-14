@@ -44,12 +44,16 @@ namespace MemoApp.Data
 
         public Task<int> SaveItemAsync(MemoItem item)
         {
+            if (item.Title == null) item.Title = "텍스트 노트" + DateTime.Now.ToString("MMdd");
+
             if (item.ID != 0)
             {
                 return Database.UpdateAsync(item);
             }
             else
             {
+                item.RegDate = DateTime.Now.ToString("yyyy년 MM월 dd일");
+                item.RegDateTime = DateTime.Now;
                 return Database.InsertAsync(item);
             }
         }

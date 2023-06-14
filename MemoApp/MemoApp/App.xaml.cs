@@ -1,4 +1,5 @@
-﻿using MemoApp.Views;
+﻿using MemoApp.Services;
+using MemoApp.Views;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
@@ -18,11 +19,15 @@ namespace MemoApp
 
             //MainPage = new NavigationPage(new AppShell());
 
+            //DependencyService.Register<MockDataStore>();
+            //MainPage = new AppShell();
+
             MainPage = new NavigationPage(new MemoMainPage())
             {
-                BarTextColor = Color.White,
+                BarTextColor = Color.Black,
                 BarBackgroundColor = (Color)App.Current.Resources["TitleColor"]
             };
+
 
         }
 

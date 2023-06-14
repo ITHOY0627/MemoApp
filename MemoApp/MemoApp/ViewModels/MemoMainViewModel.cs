@@ -29,13 +29,14 @@ namespace MemoApp.ViewModels
         //ICommand
         public ICommand ExportDBCommand { get; private set; }
         public ICommand ItemAddedCommand { get; private set; }
+        public ICommand ItemSelectedCommand { get; private set; }
 
-        
         public MemoMainViewModel()
         {
 
             ExportDBCommand = new Command(() => ExportDB(), () => IsControlEnable);
             ItemAddedCommand = new Command(() => ItemAdded(), () => IsControlEnable);
+            ItemSelectedCommand = new Command(() => ItemSelected(), () => IsControlEnable);
         }
 
         public void OnAppearing() // 화면 나올때마다 불러옴.(view에서 불러옴.)
@@ -57,6 +58,15 @@ namespace MemoApp.ViewModels
                 BindingContext = new MemoItem()
             });
         }
+
+        private async void ItemSelected()
+        {
+            await _navigation.PushAsync(new MemoItemPage
+            {
+                BindingContext = new MemoItem()
+            });
+        }
+
 
         private async void ExportDB()
         {

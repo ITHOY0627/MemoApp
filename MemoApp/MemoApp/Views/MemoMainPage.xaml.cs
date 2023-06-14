@@ -4,6 +4,7 @@ using MemoApp.ViewModels;
 using Microsoft.AppCenter.Crashes;
 using System;
 using System.Collections.Generic;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -44,9 +45,17 @@ namespace MemoApp.Views
             }
         }
 
-        private void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnListItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
+            if (e.SelectedItem != null)
+            {
+                await Navigation.PushAsync(new MemoItemPage
+                {
+                    BindingContext = e.SelectedItem as MemoItem
+                });
+            }
 
         }
+
     }
 }

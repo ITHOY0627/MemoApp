@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MemoApp.Views.MemoItemPage"
              Title="{Binding Title}"
-             BackgroundColor="#f5fafc">
+             BackgroundColor="#ffffff">
     
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="저장" Clicked="OnSaveClicked">
