@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+			 x:Class="MemoApp.Views.IDAndPWListPage"
+			 xmlns:vm="clr-namespace:MemoApp.ViewModels"
+             BackgroundColor="#ffffff"
+			 Title="아이디/비밀번호">
+
+    <ContentPage.BindingContext>
+        <vm:IDAndPWListViewModel x:Name="vm"/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <!--<ToolbarItem Text="ExportDB"
+					 Command="{Binding ExportDBCommand}"/>-->
+
+        <ToolbarItem Text="+" Command="{Binding MemoMainPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="notepad.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="+" Command="{Binding CheckListPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="check.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="+" Command="{Binding ItemAddedCommand}">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="plus.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+
+    
+    <ListView x:Name="listView"
+              Margin="10,20,10,0"
+              ItemSelected="OnListItemSelected"
+              ItemsSource="{Binding Items}"
+              
+              >
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="0,0,0,5"
+                                 Orientation="Horizontal"
+                                 VerticalOptions="Center">
+                        <Label FontSize="15"
+                               FontAttributes="Bold"
+                               TextColor="Black">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="•  "/>
+                                        <Span Text="{Binding Title}"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>

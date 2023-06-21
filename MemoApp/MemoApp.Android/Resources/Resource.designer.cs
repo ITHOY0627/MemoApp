@@ -24726,43 +24726,43 @@ namespace MemoApp.Droid
 			public const int check = 2131165279;
 			
 			// aapt resource value: 0x7F070060
-			public const int check2x = 2131165280;
+			public const int design_fab_background = 2131165280;
 			
 			// aapt resource value: 0x7F070061
-			public const int design_fab_background = 2131165281;
+			public const int design_ic_visibility = 2131165281;
 			
 			// aapt resource value: 0x7F070062
-			public const int design_ic_visibility = 2131165282;
+			public const int design_ic_visibility_off = 2131165282;
 			
 			// aapt resource value: 0x7F070063
-			public const int design_ic_visibility_off = 2131165283;
+			public const int design_password_eye = 2131165283;
 			
 			// aapt resource value: 0x7F070064
-			public const int design_password_eye = 2131165284;
+			public const int design_snackbar_background = 2131165284;
 			
 			// aapt resource value: 0x7F070065
-			public const int design_snackbar_background = 2131165285;
+			public const int ic_arrow_down_24dp = 2131165285;
 			
 			// aapt resource value: 0x7F070066
-			public const int ic_arrow_down_24dp = 2131165286;
+			public const int ic_clock_black_24dp = 2131165286;
 			
 			// aapt resource value: 0x7F070067
-			public const int ic_clock_black_24dp = 2131165287;
+			public const int ic_keyboard_black_24dp = 2131165287;
 			
 			// aapt resource value: 0x7F070068
-			public const int ic_keyboard_black_24dp = 2131165288;
+			public const int ic_mtrl_checked_circle = 2131165288;
 			
 			// aapt resource value: 0x7F070069
-			public const int ic_mtrl_checked_circle = 2131165289;
+			public const int ic_mtrl_chip_checked_black = 2131165289;
 			
 			// aapt resource value: 0x7F07006A
-			public const int ic_mtrl_chip_checked_black = 2131165290;
+			public const int ic_mtrl_chip_checked_circle = 2131165290;
 			
 			// aapt resource value: 0x7F07006B
-			public const int ic_mtrl_chip_checked_circle = 2131165291;
+			public const int ic_mtrl_chip_close_circle = 2131165291;
 			
 			// aapt resource value: 0x7F07006C
-			public const int ic_mtrl_chip_close_circle = 2131165292;
+			public const int @lock = 2131165292;
 			
 			// aapt resource value: 0x7F07006D
 			public const int material_cursor_drawable = 2131165293;
@@ -24828,58 +24828,61 @@ namespace MemoApp.Droid
 			public const int navigation_empty_icon = 2131165313;
 			
 			// aapt resource value: 0x7F070082
-			public const int notification_action_background = 2131165314;
+			public const int notepad = 2131165314;
 			
 			// aapt resource value: 0x7F070083
-			public const int notification_bg = 2131165315;
+			public const int notification_action_background = 2131165315;
 			
 			// aapt resource value: 0x7F070084
-			public const int notification_bg_low = 2131165316;
+			public const int notification_bg = 2131165316;
 			
 			// aapt resource value: 0x7F070085
-			public const int notification_bg_low_normal = 2131165317;
+			public const int notification_bg_low = 2131165317;
 			
 			// aapt resource value: 0x7F070086
-			public const int notification_bg_low_pressed = 2131165318;
+			public const int notification_bg_low_normal = 2131165318;
 			
 			// aapt resource value: 0x7F070087
-			public const int notification_bg_normal = 2131165319;
+			public const int notification_bg_low_pressed = 2131165319;
 			
 			// aapt resource value: 0x7F070088
-			public const int notification_bg_normal_pressed = 2131165320;
+			public const int notification_bg_normal = 2131165320;
 			
 			// aapt resource value: 0x7F070089
-			public const int notification_icon_background = 2131165321;
+			public const int notification_bg_normal_pressed = 2131165321;
 			
 			// aapt resource value: 0x7F07008A
-			public const int notification_template_icon_bg = 2131165322;
+			public const int notification_icon_background = 2131165322;
 			
 			// aapt resource value: 0x7F07008B
-			public const int notification_template_icon_low_bg = 2131165323;
+			public const int notification_template_icon_bg = 2131165323;
 			
 			// aapt resource value: 0x7F07008C
-			public const int notification_tile_bg = 2131165324;
+			public const int notification_template_icon_low_bg = 2131165324;
 			
 			// aapt resource value: 0x7F07008D
-			public const int notify_panel_notification_icon_bg = 2131165325;
+			public const int notification_tile_bg = 2131165325;
 			
 			// aapt resource value: 0x7F07008E
-			public const int plus = 2131165326;
+			public const int notify_panel_notification_icon_bg = 2131165326;
 			
 			// aapt resource value: 0x7F07008F
-			public const int preference_list_divider_material = 2131165327;
+			public const int plus = 2131165327;
 			
 			// aapt resource value: 0x7F070090
-			public const int save = 2131165328;
+			public const int preference_list_divider_material = 2131165328;
 			
 			// aapt resource value: 0x7F070091
-			public const int test_custom_background = 2131165329;
+			public const int save = 2131165329;
 			
 			// aapt resource value: 0x7F070092
-			public const int tooltip_frame_dark = 2131165330;
+			public const int test_custom_background = 2131165330;
 			
 			// aapt resource value: 0x7F070093
-			public const int tooltip_frame_light = 2131165331;
+			public const int tooltip_frame_dark = 2131165331;
+			
+			// aapt resource value: 0x7F070094
+			public const int tooltip_frame_light = 2131165332;
 			
 			static Drawable()
 			{

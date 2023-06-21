@@ -15,7 +15,7 @@ using Xamarin.Forms;
 
 namespace MemoApp.ViewModels
 {
-    public class MemoMainViewModel : ViewModelBase
+    public class LockMainViewModel : ViewModelBase
     {
         INavigation _navigation => Application.Current.MainPage.Navigation;
 
@@ -31,15 +31,15 @@ namespace MemoApp.ViewModels
         public ICommand ItemAddedCommand { get; private set; }
         public ICommand ItemSelectedCommand { get; private set; }
         public ICommand CheckListPageCommand { get; private set; }
-        public ICommand IDAndPWListPageCommand { get; private set; }
+        public ICommand LockListPageCommand { get; private set; }
 
-        public MemoMainViewModel()
+        public LockMainViewModel()
         {
 
             ExportDBCommand = new Command(() => ExportDB(), () => IsControlEnable);
             ItemAddedCommand = new Command(() => ItemAdded(), () => IsControlEnable);
             ItemSelectedCommand = new Command(() => ItemSelected(), () => IsControlEnable);
-            IDAndPWListPageCommand = new Command(() => IDAndPWListPageChange(), () => IsControlEnable);
+            LockListPageCommand = new Command(() => LockListPageChange(), () => IsControlEnable);
             CheckListPageCommand = new Command(() => CheckListPageChange(), () => IsControlEnable);
         }
 
@@ -62,10 +62,12 @@ namespace MemoApp.ViewModels
                 BindingContext = new MemoItem()
             });
         }
-        private async void IDAndPWListPageChange()
+        private async void LockListPageChange()
         {
-            await _navigation.PushAsync(new IDAndPWListPage());
-            
+            await _navigation.PushAsync(new MemoItemPage
+            {
+                BindingContext = new MemoItem()
+            });
         }
         private async void CheckListPageChange()
         {

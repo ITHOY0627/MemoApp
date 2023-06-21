@@ -15,31 +15,31 @@ using Xamarin.Forms;
 
 namespace MemoApp.ViewModels
 {
-    public class MemoMainViewModel : ViewModelBase
+    public class IDAndPWListViewModel : ViewModelBase
     {
         INavigation _navigation => Application.Current.MainPage.Navigation;
 
         //멤버변수
-        private ObservableRangeCollection<MemoItem> _items = new ObservableRangeCollection<MemoItem>();
+        private ObservableRangeCollection<IDAndPWItem> _items = new ObservableRangeCollection<IDAndPWItem>();
 
 
         //Prop
-        public ObservableRangeCollection<MemoItem> Items { get => this._items; set => SetProperty(ref this._items, value); }
+        public ObservableRangeCollection<IDAndPWItem> Items { get => this._items; set => SetProperty(ref this._items, value); }
 
         //ICommand
         public ICommand ExportDBCommand { get; private set; }
         public ICommand ItemAddedCommand { get; private set; }
         public ICommand ItemSelectedCommand { get; private set; }
         public ICommand CheckListPageCommand { get; private set; }
-        public ICommand IDAndPWListPageCommand { get; private set; }
+        public ICommand MemoMainPageCommand { get; private set; }
 
-        public MemoMainViewModel()
+        public IDAndPWListViewModel()
         {
 
             ExportDBCommand = new Command(() => ExportDB(), () => IsControlEnable);
             ItemAddedCommand = new Command(() => ItemAdded(), () => IsControlEnable);
             ItemSelectedCommand = new Command(() => ItemSelected(), () => IsControlEnable);
-            IDAndPWListPageCommand = new Command(() => IDAndPWListPageChange(), () => IsControlEnable);
+            MemoMainPageCommand = new Command(() => MemoMainPageChange(), () => IsControlEnable);
             CheckListPageCommand = new Command(() => CheckListPageChange(), () => IsControlEnable);
         }
 
@@ -47,7 +47,7 @@ namespace MemoApp.ViewModels
         {
             MainThread.BeginInvokeOnMainThread(async () =>
             {
-                MemoItemDatabase database = await MemoItemDatabase.Instance;
+                IDAndPWItemDatabase database = await IDAndPWItemDatabase.Instance;
                 var result = await database.GetItemsAsync();
 
                 Items.Clear();
@@ -57,19 +57,20 @@ namespace MemoApp.ViewModels
 
         private async void ItemAdded()
         {
-            await _navigation.PushAsync(new MemoItemPage
+            await _navigation.PushAsync(new IDAndPWItemPage
             {
-                BindingContext = new MemoItem()
+                BindingContext = new IDAndPWItem()
             });
         }
-        private async void IDAndPWListPageChange()
+
+        private async void MemoMainPageChange()
         {
-            await _navigation.PushAsync(new IDAndPWListPage());
-            
+            await _navigation.PushAsync(new MemoMainPage());
         }
+
         private async void CheckListPageChange()
         {
-            await _navigation.PushAsync(new MemoItemPage
+            await _navigation.PushAsync(new MemoMainPage
             {
                 BindingContext = new MemoItem()
             });
@@ -77,9 +78,9 @@ namespace MemoApp.ViewModels
 
         private async void ItemSelected()
         {
-            await _navigation.PushAsync(new MemoItemPage
+            await _navigation.PushAsync(new IDAndPWItemPage
             {
-                BindingContext = new MemoItem()
+                BindingContext = new IDAndPWItem()
             });
         }
 
@@ -93,7 +94,7 @@ namespace MemoApp.ViewModels
 
             Analytics.TrackEvent("ExportDB");
 
-            MemoItemDatabase database = await MemoItemDatabase.Instance;
+            IDAndPWItemDatabase database = await IDAndPWItemDatabase.Instance;
             var path = await database.DBToExport();
 
             if (!string.IsNullOrEmpty(path) && File.Exists(path))

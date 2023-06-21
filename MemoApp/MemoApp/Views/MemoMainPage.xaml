@@ -13,8 +13,24 @@
 	<ContentPage.ToolbarItems>
         <ToolbarItem Text="ExportDB"
 					 Command="{Binding ExportDBCommand}"/>
-        
-		<ToolbarItem Text="+" Command="{Binding ItemAddedCommand}">
+
+        <ToolbarItem Text="+" Command="{Binding IDAndPWListPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="lock.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="+" Command="{Binding CheckListPageCommand}">
+            <ToolbarItem.IconImageSource>
+                <OnPlatform x:TypeArguments="ImageSource">
+                    <On Platform="Android" Value="check.png"/>
+                </OnPlatform>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+
+        <ToolbarItem Text="+" Command="{Binding ItemAddedCommand}">
 			<ToolbarItem.IconImageSource>
 				<OnPlatform x:TypeArguments="ImageSource">
 					<On Platform="Android" Value="plus.png"/>
